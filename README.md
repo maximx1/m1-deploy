@@ -16,3 +16,6 @@ Modify the dockerappinstaller role with your Dockerfile and app name in the main
 
 ### Coming upgrades
 external config of properties such as app naming.
+
+### Notes
+[defining hosts](https://docs.vagrantup.com/v2/provisioning/ansible.html)
