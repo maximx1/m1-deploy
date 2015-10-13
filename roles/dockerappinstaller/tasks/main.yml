@@ -1,0 +1,14 @@
+---
+- name: Stop any current docker instances
+  shell: docker stop `docker ps -q`
+  ignore_errors: yes
+
+- name: Install Dockerfile
+  template: src=Dockerfile dest=/tmp/Dockerfile
+
+- name: Build docker container
+  shell: docker build -t maximx1/battleship .
+    chdir=/tmp/
+
+- name: Run app
+  shell: docker run -p 3000:3000 -d --log-driver=syslog maximx1/battleship
